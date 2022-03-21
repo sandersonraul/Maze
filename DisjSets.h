@@ -5,10 +5,12 @@
  * 
  * 
  */
+
+#include<vector>
 class DisjSets{
     public:
        // Generates the disjoint sets, one for each element.
-        explicit DisjSets(int numElements);
+        explicit DisjSets(int tamanho);
         //return set's name containing x
         int find(int x);
         //return set's name containing x, with path compression.
@@ -16,7 +18,9 @@ class DisjSets{
         // Return the current number of disjoint sets
         int size()const;
 
+        int unir_altura(int raiz1,int raiz2);
+
         private:
-            int* Maze;
+           int* vetor
 
 } ;
