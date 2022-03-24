@@ -78,7 +78,7 @@ int main(int argc, char **argv)
     unsigned char BottomWall = 4;
     unsigned char LeftWall = 8;
     unsigned char celulasVisitadas = 16;
-    unsigned char celulasErradas = 32; // arMazena os números embaralhados aleatoreamente
+    unsigned char celulasErradas = 32; 
     int altura = 5;
     int largura = 5;
     bool valido = false; // indica se o labirinto será valido ou totalmente conexo
@@ -158,7 +158,7 @@ int main(int argc, char **argv)
     for (int i = 0; i < (tamanho); i++)
     {
         Maze[i] = TopWall | RightWall | BottomWall | LeftWall;
-        // preenche vetor v com os numeros de todas as celulas
+        
     }
     Maze[0] &= ~LeftWall;            // apaga primeira parede
     Maze[tamanho - 1] &= ~RightWall; // apaga ultima parede
@@ -191,7 +191,7 @@ int main(int argc, char **argv)
                 break;
             case 1: // RightWall
                 if ((randomCell + 1) % largura != 0)
-                { // se tiver na ultima coluna, nao quebra a parede de cima
+                { 
                     if (Maze[randomCell] & RightWall)
                     { // A parede está intacta?
                         if (conjuntos.find(randomCell) != conjuntos.find(randomCell + 1))
@@ -205,7 +205,7 @@ int main(int argc, char **argv)
                 break;
             case 2:
                 if (randomCell < tamanho - largura - 1)
-                { // se tiver na ultima linha, nao quebra a parede de cima
+                { 
                     if (Maze[randomCell] & BottomWall)
                     { // A parede está intacta?
                         if (conjuntos.find(randomCell) != conjuntos.find(randomCell + largura))
